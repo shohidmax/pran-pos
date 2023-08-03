@@ -4,19 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Link, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import Home from './Component/Page/Home/Home';
+import Notfound from './Component/Page/Notfound/Notfound';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <div>
-        <h1>Hello World</h1>
-        
-      </div>
-    ),
+    element: (<Home/>),
   },
   {
     path: "about",
     element: <div>About.............</div>,
+  },
+  {
+    path: "*",
+    element: (<Notfound/>),
   },
 ]);
 
