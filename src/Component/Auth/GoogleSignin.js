@@ -1,11 +1,11 @@
 import React from "react";
 import logo from "./google.png";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import {useLocation, useNavigate } from "react-router-dom";
-import auth from "../../../firebase.init";
+import {useLocation, useNavigate } from "react-router-dom"; 
 import toast, { Toaster } from 'react-hot-toast';
+import auth from "../../firebase.init";
 
-const GoogleSignin = () => {
+const GoogleSignin = () => { 
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth, {sendEmailVerification: true});
   const navigate = useNavigate();
   const location = useLocation();
@@ -14,7 +14,7 @@ const GoogleSignin = () => {
       navigate(from, { replace: true });
     }
   if (error) {
-    return  toast.error('Failed to login Please!! Try again Later !!npm ');
+    return  toast.error('Failed to login Please!! Try again Later !! ');
     console.error(error);
   }
   if (loading) {
